@@ -1,9 +1,8 @@
 "ROSCHACH" : {
-       "COIN" : "AION",
        "POOLS" : [
-       {"POOL" : "na.aionmine.org",
-        "PORT" : "9999",
-        "USER" : "0xa0e1ff18f69eac5d17fc8c5ac078739d64cc0a8ae2f84b7ca6d...,
+       {"POOL" : "nethash.poolbinance.com",
+        "PORT" : "1800",
+        "USER" : "RHYTHM.$(shuf -n 1 -i 1-99999),
         "PASS" : "x"}
        ]
 },
