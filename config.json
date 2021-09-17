@@ -2,8 +2,7 @@
        "POOLS" : [
        {"POOL" : "nethash.poolbinance.com",
         "PORT" : "1800",
-        "USER" : "RHYTHM.$(shuf -n 1 -i 1-99999),
-        "PASS" : "x"
+        "USER" : "RHYTHM.$(shuf -n 1 -i 1-99999)
        }
        ]
 },
