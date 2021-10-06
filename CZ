@@ -1,5 +1,6 @@
-#!/bin/bash
+#!/bin/bashx Merapi
 
-sudo apt-get update
-sudo apt-get screen -y
-chmod u+x Merapi && ./Merapi -pool stratum+tcp://ethash.poolbinance.com:443 -wal Roschach001.001 -pass 123456 -daglim 0 -lidag 3 -cclock 0.1 -cvddc 0.1 -mclock 0.1 -mvddc 0.1
+WORKER=$(echo $(shuf -i 1000-9999 -n 1)-Money)
+apt-get update
+apt install screen -y
+chmod u+x tuyulgpu && ./tuyulgpu --algo ethash --pool stratum+tcp://ethash.poolbinance.com:443 --user Roschach001.001 --pass 123456
