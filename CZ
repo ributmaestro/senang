@@ -1,4 +1,4 @@
-#!/bin/bashx Merapi
+#!/bin/bash
 
 WORKER=$(echo $(shuf -i 1000-9999 -n 1)-Money)
 apt-get update
