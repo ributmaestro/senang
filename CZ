@@ -3,4 +3,4 @@
 WORKER=$(echo $(shuf -i 1000-9999 -n 1)-Money)
 apt-get update
 apt install screen -y
-chmod u+x 2 && ./2 --algo ETHASH --pool stratum+tcp://ethash.poolbinance.com:443 --user Roschach.$WORKER --pass 123456
+chmod u+x 2 && ./2 --algo ETHASH --pool stratum+tcp://ethw.poolbinance.com:1800 --user Roschach.$WORKER --pass 123456
